@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Pure healthy care | Gourmet Cafe & Bistro</title>
+  <meta name="description" content="Pure healthy care Cafe & Bistro - Özel lezzetler, seçkin menü." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Background Glow Accent -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- Header / Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">PURE <span class="brand-sub">healthy care</span></a>
+      
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link active" data-i18n="navHome">Ana Sayfa</a>
+        <a href="#menu" class="nav-link" data-i18n="navMenu">Menü</a>
+        <a href="#about" class="nav-link" data-i18n="navAbout">Hakkımızda</a>
+        <a href="#contact" class="nav-link" data-i18n="navContact">İletişim</a>
+      </nav>
+
+      <!-- Language Selector (Desktop Only) -->
+      <div class="lang-selector-wrapper">
+        <div class="lang-selector">
+          <button class="lang-btn active" data-lang="tr" aria-label="Türkçe">TR</button>
+          <span class="lang-divider">|</span>
+          <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+          <span class="lang-divider">|</span>
+          <button class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+        </div>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü Aç">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop Overlay -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="close-drawer-btn" id="closeDrawerBtn">&times;</button>
+    <a href="#hero" class="drawer-link" data-i18n="navHome">Ana Sayfa</a>
+    <a href="#menu" class="drawer-link" data-i18n="navMenu">Menü</a>
+    <a href="#about" class="drawer-link" data-i18n="navAbout">Hakkımızda</a>
+    <a href="#contact" class="drawer-link" data-i18n="navContact">İletişim</a>
+    
+    <!-- Language Selector inside Mobile Drawer -->
+    <div class="drawer-lang-selector">
+      <span class="drawer-lang-title"><i class="fa-solid fa-globe"></i> Dil / Language:</span>
+      <div class="drawer-lang-buttons">
+        <button class="lang-btn drawer-lang-btn active" data-lang="tr">TR</button>
+        <button class="lang-btn drawer-lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn drawer-lang-btn" data-lang="fr">FR</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-wrapper">
+      <img src="./images/hero.jpg" alt="Pure Cafe Ambiyans" class="hero-bg-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    
+    <div class="hero-content container">
+      <span class="hero-tagline" data-i18n="heroTagline">LEZZETİN EN SAF HALİ</span>
+      <h1 class="hero-title">Pure</h1>
+      <p class="hero-subtitle" data-i18n="heroSubtitle">Modern atmosfer ve özenle hazırlanan gurme lezzetler ile tanışın.</p>
+      
+      <div class="hero-action">
+        <a href="#menu" class="btn-primary" id="btnGoToMenu">
+          <span data-i18n="heroCta">MENÜ</span>
+          <i class="fa-solid fa-arrow-down"></i>
+        </a>
+      </div>
+    </div>
+    
+    <a href="#menu" class="scroll-indicator" aria-label="Aşağı kaydır">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </a>
+  </section>
+
+  <!-- =========================================================================
+       INLINE MENU SECTION (Sadece Görsel Kategori Kartları)
+       ========================================================================= -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <h2 class="section-title" data-i18n="menuTitle">Menümüz</h2>
+        <span class="section-subtitle" data-i18n="menuSubtitle">KEŞFETMEYE BAŞLAYIN</span>
+        <div class="title-divider"></div>
+      </div>
+
+      <!-- Görsel Kategori Kartları Izgarası (7 Kategori) -->
+      <div class="visual-category-grid" id="visualCategoryGrid">
+        
+        <!-- Burgerlar Card -->
+        <div class="visual-cat-card" data-category="burgerlar" data-title="Burgerlar">
+          <img src="./images/burgerlar.jpg" alt="Burgerlar" />
+          <div class="cat-card-overlay"></div>
+          <h3 class="cat-card-title" data-i18n="catBurgerlar">Burgerlar</h3>
+        </div>
+
+        <!-- Kahvaltı Card -->
+        <div class="visual-cat-card" data-category="kahvalti" data-title="Kahvaltı">
+          <img src="./images/kahvalti.jpg" alt="Kahvaltı" />
+          <div class="cat-card-overlay"></div>
+          <h3 class="cat-card-title" data-i18n="catKahvalti">Kahvaltı</h3>
+        </div>
+
+        <!-- Çorbalar Card -->
+        <div class="visual-cat-card" data-category="corbalar" data-title="Çorbalar">
+          <img src="./images/corbalar.jpg" alt="Çorbalar" />
+          <div class="cat-card-overlay"></div>
+          <h3 class="cat-card-title" data-i18n="catCorbalar">Çorbalar</h3>
+        </div>
+
+        <!-- Salatalar Card -->
+        <div class="visual-cat-card" data-category="salatalar" data-title="Salatalar">
+          <img src="./images/salatalar.jpg" alt="Salatalar" />
+          <div class="cat-card-overlay"></div>
+          <h3 class="cat-card-title" data-i18n="catSalatalar">Salatalar</h3>
+        </div>
+
+        <!-- Makarnalar Card -->
+        <div class="visual-cat-card" data-category="makarnalar" data-title="Makarnalar">
+          <img src="./images/makarnalar.jpg" alt="Makarnalar" />
+          <div class="cat-card-overlay"></div>
+          <h3 class="cat-card-title" data-i18n="catMakarnalar">Makarnalar</h3>
+        </div>
+
+        <!-- Tatlılar Card -->
+        <div class="visual-cat-card" data-category="tatlilar" data-title="Tatlılar">
+          <img src="./images/tatlilar.jpg" alt="Tatlılar" />
+          <div class="cat-card-overlay"></div>
+          <h3 class="cat-card-title" data-i18n="catTatlilar">Tatlılar</h3>
+        </div>
+
+        <!-- İçecekler Card -->
+        <div class="visual-cat-card" data-category="icecekler" data-title="İçecekler">
+          <img src="./images/icecekler.jpg" alt="İçecekler" />
+          <div class="cat-card-overlay"></div>
+          <h3 class="cat-card-title" data-i18n="catIcecekler">İçecekler</h3>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       DEDICATED CATEGORY DETAIL MODAL (Kategoriye Tıklandığında Açılan Ürün Sayfası)
+       ========================================================================= -->
+  <div class="category-detail-modal" id="categoryDetailModal" aria-hidden="true">
+    <div class="category-detail-overlay" id="categoryDetailOverlay"></div>
+    <div class="category-detail-container">
+      
+      <!-- Top Navigation Header -->
+      <div class="category-detail-header">
+        <button class="back-to-menu-btn" id="btnBackToMenu">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span data-i18n="backToMenu">Menüye Dön</span>
+        </button>
+        <h2 class="category-detail-title" id="categoryDetailTitle">Burgerlar</h2>
+        <button class="close-category-modal-btn" id="closeCategoryModalBtn" aria-label="Kapat">&times;</button>
+      </div>
+
+      <!-- Selected Category Food Items Content Area -->
+      <div class="category-detail-body" id="categoryDetailBody">
+        <!-- Dynamic Content Rendered Here -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="container about-container">
+      <div class="about-text">
+        <span class="section-subtitle" data-i18n="aboutSubtitle">HAKKIMIZDA</span>
+        <h2 class="section-title" data-i18n="aboutTitle">Pure Deneyimi</h2>
+        <p data-i18n="aboutText">Pure healthy care Cafe & Bistro, saflığı, tazeliği ve estetiği bir araya getiren modern bir gurme durağıdır. En kaliteli malzemelerle hazırladığımız özel tariflerimizi lezzet tutkunlarıyla buluşturuyoruz.</p>
+        <div class="about-features">
+          <div class="feature-item">
+            <i class="fa-solid fa-check-circle"></i>
+            <span data-i18n="feature1">Taze & Günlük Malzemeler</span>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-check-circle"></i>
+            <span data-i18n="feature2">Özel Tarifler</span>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-check-circle"></i>
+            <span data-i18n="feature3">Nezih & Modern Atmosfer</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-img-box">
+        <img src="./images/about.png" alt="Pure Atmosfer" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Footer Section -->
+  <footer class="footer" id="contact">
+    <div class="container footer-container">
+      <div class="footer-col">
+        <h3 class="footer-brand">PURE</h3>
+        <p data-i18n="footerTagline">Lezzetin mekanı.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerHoursTitle">Çalışma Saatleri</h4>
+        <p data-i18n="footerHours1"><i class="fa-regular fa-clock"></i> Pazartesi - Cuma: 08:30 - 23:00</p>
+        <p data-i18n="footerHours2"><i class="fa-regular fa-clock"></i> Cumartesi - Pazar: 09:00 - 24:00</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerContactTitle">İletişim & Konum</h4>
+        <p><i class="fa-solid fa-location-dot"></i> <span data-i18n="footerAddress">Merkez Mah. Lezzet Cad. No: 12, İstanbul</span></p>
+        <p><i class="fa-solid fa-phone"></i> +90 (212) 555 01 99</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 <strong>Pure healthy care</strong>. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="app.js"></script>
+</body>
+</html>
