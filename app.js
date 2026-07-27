@@ -350,9 +350,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const fileName = currentSrc.split('/').pop();
       if (!this.dataset.retried) {
         this.dataset.retried = '1';
-        this.src = 'images/' + fileName;
+        this.src = fileName;
       } else if (this.dataset.retried === '1') {
         this.dataset.retried = '2';
+        this.src = 'images/' + fileName;
+      } else if (this.dataset.retried === '2') {
+        this.dataset.retried = '3';
         this.src = './images/' + fileName;
       }
     });
