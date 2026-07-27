@@ -340,14 +340,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ------------------------------------------------------------------------
-     5. Load Saved Language Preference
+     6. Automatic Image Path Self-Healing Handler (GitHub Pages Fallback)
      ------------------------------------------------------------------------ */
-  try {
-    const savedLang = localStorage.getItem('pure_cafe_lang');
-    if (savedLang && translations[savedLang]) {
-      setLanguage(savedLang);
-    }
-  } catch (e) {}
+  document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('error', function() {
+      const currentSrc = this.getAttribute('src');
+      if (!currentSrc) return;
+      
+      const fileName = currentSrc.split('/').pop();
+      if (!this.dataset.retried) {
+        this.dataset.retried = '1';
+        this.src = 'images/' + fileName;
+      } else if (this.dataset.retried === '1') {
+        this.dataset.retried = '2';
+        this.src = './images/' + fileName;
+      }
+    });
+  });
 
-  console.log('Pure healthy care - Çoklu dil desteği (TR, EN, FR) aktif.');
+  console.log('Pure healthy care - Görsel otomatik onarım sistemi aktif.');
 });
